@@ -117,20 +117,21 @@
             <div id="contact">
                 <h3 class="section-title">Contactez-moi</h3>
                 <!-- L'attribut action contient ton lien unique Formspree -->
-    <!-- L'attribut method doit être POST -->
-    <form action="https://formspree.io/f/ton_identifiant" method="POST" id="contact-form">
-        
-        <input type="text" name="name" placeholder="Ton Nom" required>
-        
-        <input type="email" name="email" placeholder="Ton Email" required>
-        
-        <!-- Le 'name' est crucial pour recevoir le contenu du message -->
-        <textarea name="message" placeholder="Votre message ou motivation" required></textarea>
-        
-        <!-- Ton bouton doit être de type submit -->
-        <button type="submit" class="import-btn">Envoyer 🚀</button>
-        
-    </form>
+                <!-- L'attribut method doit être POST -->
+                <form action="https://formspree.io/f/ton_identifiant" method="POST" id="contact-form">
+                    
+                    <input type="text" name="name" placeholder="Ton Nom" required>
+                    
+                    <input type="email" name="email" placeholder="Ton Email" required>
+                    
+                    <!-- Le 'name' est crucial pour recevoir le contenu du message -->
+                    <textarea name="message" placeholder="Votre message ou motivation" required></textarea>
+                    
+                    <!-- Ton bouton doit être de type submit -->
+                    <button type="submit" class="import-btn">Envoyer 🚀</button>
+                    
+                </form>
+                
               <button onclick="openGmail()">
                 <span class="email-icon">📧</span> Contactez-moi
                 </button>
