@@ -385,12 +385,14 @@ input[type="range"]#volume {
     font-family: 'Roboto', sans-serif;
     outline: none;
     transition: 0.3s;
+   font-size: 1.2rem;  /* Grossit le texte à l'intérieur pour que ce soit proportionnel */
 }
 
 #contact-form input:focus, 
 #contact-form textarea:focus {
     border-color: #9b5cff;
     box-shadow: 0 0 10px rgba(155, 92, 255, 0.3);
+   font-size: 1.2rem;  /* Grossit le texte à l'intérieur pour que ce soit proportionnel */
 }
 
 #contact-form textarea {
