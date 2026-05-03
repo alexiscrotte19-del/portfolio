@@ -398,7 +398,7 @@ input[type="range"]#volume {
     resize: vertical; /* Permet à l'utilisateur d'agrandir la zone de texte */
 }
 #contact-form input[type="email"] {
-    width: 200%;        / * Le champ prend toute la largeur du cadre */
+    width: 100%;        / * Le champ prend toute la largeur du cadre */
       height: 60px;       /* Augmente la hauteur du champ */
     font-size: 1.2rem;  /* Grossit le texte à l'intérieur pour que ce soit proportionnel */
     padding: 0 30px;    /* Ajoute de l'espace sur les côtés */
