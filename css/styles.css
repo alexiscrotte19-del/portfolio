@@ -398,10 +398,12 @@ input[type="range"]#volume {
     resize: vertical; /* Permet à l'utilisateur d'agrandir la zone de texte */
 }
 #contact-form input[type="email"] {
-    height: 60px;       /* Augmente la hauteur du champ */
+    width: 100%;        / * Le champ prend toute la largeur du cadre */
+      height: 60px;       /* Augmente la hauteur du champ */
     font-size: 1.2rem;  /* Grossit le texte à l'intérieur pour que ce soit proportionnel */
     padding: 0 20px;    /* Ajoute de l'espace sur les côtés */
     border-radius: 12px; /* Garde les bords arrondis de ton design */
+   box-sizing: border-box; /* Très important pour que le padding ne fasse pas dépasser le cadre */
 }
 /* ============================================================
    RESPONSIVITÉ (MOBILE & TABLETTE)
