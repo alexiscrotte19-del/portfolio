@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/styles.js" defer></script>
+    <title>Contact</title>
+</head>
+<body>
+    
+
+    <section id="contact">
+        <h3 class="section-title">Contact</h3>
+    </section>
+
+    <div class="contact-info hover-3d">
+        <h2>Coordonnées</h2>
+        <a href="mailto:crottealexis19@gmail.com" class="email-button">Me Contacter</a>
+        <p>Email : alexis.crotte19@gmail.com</p>
+        <p>Téléphone : 06 41 40 15 49</p>
+    </div>
+
+
+    <h1>Formulaire</h1>
+    <form action="/action.php" method="post">
+
+        <fieldset>
+            <legend>identité</legend><br>
+
+        <label for="fname"> prenom </label><br>
+
+        <input type="text"id="fname" name="fname"placeholder="prénom" autofocus tabindex="1"required><br>
+
+        <label for="lname">nom</label><br>
+
+        <input type="text"id="lname" name="lname"placeholder="nom" tabindex="2" required><br>
+
+        <label type="sexe">sexe</label>
+
+        <input type= "radio" name="sexe" id="mec"value ="masculin"><br>
+
+        <label for="masc">masculin</label><br>
+
+        <label for="fem">féminin</label><br>
+        
+        <input type= "radio" name="sexe" id="fem"value ="féminin"><br>
+
+        <input type="submit" value="Submit"><br>
+
+        <label for="birthday">Birthday:</label><br>
+        <input type="date" id="birthday" name="birthday"><br>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            
+            <legend>Mieux vous connaitre</legend>
+            <label for="cours">votre cours préférer</label><br>
+            <input type ="text" name ="cours" id="cours"><br>
+            <select Name="menu"></label>
+                <option> Drôme</option>
+                <option>loire</option>
+                <option>Ardèche</option>
+                <option>Autre</option>
+                <label for="cours">indiquer le numéro de votre département</label><br>
+                <input type="text" name="departement" id="departement">
+                
+                
+            </select>
+            <br>
+            <label for="cours">je viens en cours</label><br>
+            <select Name="déplace"></label><br>
+                <option> à pieds</option>
+                <option>jet privée</option>
+                <option>bus</option>
+                <option>voiture</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend> inscription à la formation </legend><br>
+        
+            <label for="motivation">votre  motivation</label><br>
+            <textarea name="motivation" rows="10" cols="80"></textarea>
+            
+            </textarea>
+            <br>
+            
+            <label for="cours">mes loisirs</label><br>
+            <select Name="loisirs"></label>
+                <option> sport </option>
+                <option>alcool</option>
+                <option>cinéma</option>
+                <option>argent</option>
+            </select>
+        </fieldset>
+    </form>
+
+    
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/styles.js" defer></script>
+    <title>Accueil</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="flash-transition"></div>
+
+    <div class="portfolio-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar-content">
+
+            <div class="profile">
+                <h1 class="name">Alexis Crotte</h1>
+                <h2 class="title">Développeur & Technicien Informatique</h2>
+                <p class="bio">Passionné par la création de solutions web performantes et la maintenance de systèmes informatiques.</p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#" data-page="home">Accueil</a></li>
+                    <li><a href="#" data-page="experience">Expérience</a></li>
+                    <li><a href="#" data-page="formations">Formations</a></li>
+                    <li><a href="#" data-page="competences">Compétences</a></li>
+                    <li><a href="#" data-page="interets">Projets</a></li>
+                    <li><a href="#" data-page="formulaire">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+            <div class="container">
+                <h1>Bienvenue sur mon portfolio</h1>
+                <p>Découvrez mes projets, expériences et compétences en développement et maintenance informatique.</p>
+                <p>Ma motivation : Je suis motivé par l'innovation technologique et l'envie d'apprendre continuellement pour résoudre des problèmes complexes et créer des solutions utiles.</p>
+            </div>
+
+            <section id="education">
+                <h3 class="section-title">Formation</h3>
+
+                <div class="education-item hover-3d">
+                    <h4>Baccalauréat Professionnel Systèmes Numériques</h4>
+                    <p class="school">Lycée privé Marc Seguin, Annonay</p>
+                    <p class="date">2025 - 2026</p>
+                </div>
+
+                <div class="education-item hover-3d">
+                    <h4>Brevet des collèges</h4>
+                    <p class="school">Collège André Cotte, Saint-Vallier</p>
+                    <p class="date">2019 - 2020</p>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h3 class="section-title">Compétences</h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-category hover-3d">
+                        <h5>Systèmes & Réseaux</h5>
+                        <ul class="skills">
+                            <li>Windows Server</li>
+                            <li>Linux (Debian, Ubuntu)</li>
+                            <li>Active Directory & GPO</li>
+                            <li>Serveur Web Apache</li>
+                            <li>Cisco Packet Tracer</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category hover-3d">
+                        <h5>Développement & Bases de données</h5>
+                        <ul class="skills">
+                            <li>HTML5 & CSS3</li>
+                            <li>MySQL / MariaDB</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category hover-3d">
+                        <h5>Outils & Méthodologies</h5>
+                        <ul class="skills">
+                            <li>Virtualisation (VMware, VirtualBox)</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="experience">
+                <h3 class="section-title">Expériences</h3>
+
+                <div class="experience-item hover-3d">
+                    <h4>Stage en boutique informatique</h4>
+                    <p class="date">2023</p>
+                </div>
+
+                <div class="experience-item hover-3d">
+                    <h4>Projet de développement web</h4>
+                    <p class="date">2022</p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h3 class="section-title">Contact</h3>
+            </section>
+
+            <div class="contact-info hover-3d">
+                <!-- Bouton de contact par email -->
+                <a href="mailto:alexiscrotte19@gmail.com" class="email-button">Me Contacter</a>
+                <p>Email : alexiscrotte19@gmail.com</p>
+                <p>Téléphone : 06 41 40 15 49</p>
+            </div>
+
+        </div> <!-- FIN content -->
+
+    </div> <!-- FIN portfolio-container -->
+
+    <!-- LECTEUR AUDIO COMPLET -->
+    <footer>
+        <div class="music-player">
+
+            <div class="top">
+                <div id="currentSong" class="song-title"></div>
+            </div>
+
+            <div class="controls">  
+                <button id="prevBtn">⏮️</button>
+                <button id="playPause">▶️</button>
+                <button id="nextBtn">⏭️</button>
+            </div>
+
+            <div class="progress-wrapper">
+                <div class="music-progress-container">
+                <div id="progressBar"></div>
+                </div>
+            </div>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+               
+            <div class="equalizer">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+                <button id="importBtn">🎵</button>
+                <input type ="file" id="fileInput"accept="audio/*" multiple style="display:none">
+        </div>
+    </footer>  
+     <!-- LECTEUR AUDIO Principal-->
+     <audio id="musique"></audio>
+
+
+</body>
+</html>
