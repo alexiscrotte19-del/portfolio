@@ -396,6 +396,7 @@ input[type="range"]#volume {
 #contact-form textarea {
     min-height: 120px;
     resize: vertical; /* Permet à l'utilisateur d'agrandir la zone de texte */
+     font-size: 1.2rem;  /* Grossit le texte à l'intérieur pour que ce soit proportionnel */
 }
 #contact-form input[type="email"] {
     width: 50%;        / * Le champ prend toute la largeur du cadre */
