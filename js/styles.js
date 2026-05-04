@@ -41,47 +41,40 @@ document.querySelectorAll("[data-page]").forEach(link => {
             const contentEl = document.getElementById("content");
             if (!contentEl) return;
 
+            // Retour à l'accueil
             if (page === "home") {
                 contentEl.innerHTML = originalHomeContent;
                 reinitPageScripts();
+                window.scrollTo(0, 0);
                 return;
             }
-               .then(html => {
-                   contentEl.innerHTML = html;
-               
-                   const form = contentEl.querySelector('form');
-                   if (form) {
-                       form.reset(); // Méthode standard
-                       // Sécurité supplémentaire : on vide manuellement chaque champ
-                       form.querySelectorAll('input, textarea').forEach(el => el.value = '');
-                   }
 
-                         reinitPageScripts();
-                     })
-             .catch(err => console.error("Erreur de navigation SPA:", err));
-              };
+            // Chargement des autres pages (Contact, etc.)
+            fetch(`pages/${page}.html`)
+                .then(res => res.text())
+                .then(html => {
+                    contentEl.innerHTML = html;
 
-                 if (typeof playFlashTransition === "function") {
-                     playFlashTransition(changePage);
-                 } else {
-                     changePage();
-                 }
-             });
-         });
+                    // --- NETTOYAGE DU FORMULAIRE ---
+                    const form = contentEl.querySelector('form');
+                    if (form) {
+                        form.reset(); 
+                        form.querySelectorAll('input, textarea').forEach(el => el.value = '');
+                    }
 
-function reinitPageScripts() {
-    if (typeof initContactButton === "function") initContactButton();
-    
-    // On relance l'observateur pour les animations[cite: 1]
-    document.querySelectorAll("section").forEach(sec => observer.observe(sec));
+                    reinitPageScripts();
+                    window.scrollTo(0, 0);
+                })
+                .catch(err => console.error("Erreur de navigation SPA:", err));
+        };
 
-    // ON AJOUTE LE BOUTON AUTOMATIQUEMENT
-    // On ne l'ajoute que si on n'est pas déjà sur l'accueil
-    const contentEl = document.getElementById("content");
-    if (contentEl && contentEl.innerHTML !== originalHomeContent) {
-        ajouterBoutonRetour();
-    }
-}
+        if (typeof playFlashTransition === "function") {
+            playFlashTransition(changePage);
+        } else {
+            changePage();
+        }
+    });
+});
 /* ============================================================
    FONCTIONS CORE DU LECTEUR
 ============================================================ */
