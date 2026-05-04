@@ -46,23 +46,28 @@ document.querySelectorAll("[data-page]").forEach(link => {
                 reinitPageScripts();
                 return;
             }
+               .then(html => {
+                   contentEl.innerHTML = html;
+               
+                   const form = contentEl.querySelector('form');
+                   if (form) {
+                       form.reset(); // Méthode standard
+                       // Sécurité supplémentaire : on vide manuellement chaque champ
+                       form.querySelectorAll('input, textarea').forEach(el => el.value = '');
+                   }
 
-            fetch(`pages/${page}.html`)
-                .then(res => res.text())
-                .then(html => {
-                    contentEl.innerHTML = html;
-                    reinitPageScripts();
-                })
-                .catch(err => console.error("Erreur de navigation SPA:", err));
-        };
+                         reinitPageScripts();
+                     })
+             .catch(err => console.error("Erreur de navigation SPA:", err));
+              };
 
-        if (typeof playFlashTransition === "function") {
-            playFlashTransition(changePage);
-        } else {
-            changePage();
-        }
-    });
-});
+                 if (typeof playFlashTransition === "function") {
+                     playFlashTransition(changePage);
+                 } else {
+                     changePage();
+                 }
+             });
+         });
 
 function reinitPageScripts() {
     if (typeof initContactButton === "function") initContactButton();
