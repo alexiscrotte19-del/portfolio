@@ -420,15 +420,4 @@ function ajouterBoutonRetour() {
     container.appendChild(btn);
     contentEl.appendChild(container);
 }
-// On cible le formulaire
-const monFormulaire = document.getElementById('contact-form');
 
-// On écoute l'évènement "submit" (l'envoi)
-if (monFormulaire) {
-    monFormulaire.addEventListener('submit', function() {
-        // On attend 100ms pour être sûr que les données sont parties
-        setTimeout(() => {
-            monFormulaire.reset(); 
-        }, 100);
-    });
-}
