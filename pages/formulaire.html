@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Changé en fr pour la langue -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/styles.js" defer></script>
+    <title>Contact - Alexis Crotte</title>
+</head>
+<body>
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="form-section hover-3d">
+            <h2 class="section-title">Contactez-moi</h2>
+            
+                <!-- Remplace 'ton_identifiant' par ton ID réel Formspree -->
+                <form action="https://formspree.io/f/ton_identifiant" method="POST" id="contact-form">
+                    
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Ton Nom" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <input type="email" id="email" name="email"  placeholder="Ton Email" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="6" cols ="30"placeholder="Votre message ou motivation" required></textarea>
+                    </div>
+            
+                    <!-- Le bouton type submit pour valider le formulaire -->
+                    <button type="submit" class="import-btn">Envoyer 🚀</button>
+                            
+                </form>
+        </section>
+</body>
+</html>
