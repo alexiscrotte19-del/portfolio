@@ -21,7 +21,7 @@ const playlist = [
     { title: "A Songus Amongus - The Chalkeaters", src: "music/adridrou/music01.flac" },
     { title: "TETORIS - Kasane Teto", src: "music/adridrou/music02.mp3" },
     { title: "エクストリーム空中戦 - NayutalieN", src: "music/adridrou/music03.mp3" }
-    { title: "DOOM Eternal",src: "music/hazbinhotel/Doom Eternal OST - The Only Thing They Fear Is You (Mick Gordon) [Doom Eternal Theme].mp3
+    { title: "DOOM Eternal",src: "music/hazbinhotel/Doom Eternal OST - The Only Thing They Fear Is You (Mick Gordon) [Doom Eternal Theme].mp3 "}
 ];
 
 window.addEventListener('load', () => {
