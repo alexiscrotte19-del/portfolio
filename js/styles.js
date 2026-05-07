@@ -17,7 +17,10 @@ const volControl = document.getElementById('volume');
 // Playlist initiale
 const playlist = [
     { title: "Insane - Black Gryph0n", src: "music/hazbinhotel/Insane Black Gryph0n.mp3" },
-    { title: "Upside Down - Black Gryph0n", src: "music/hazbinhotel/Upside Down.mp3" }
+    { title: "Upside Down - Black Gryph0n", src: "music/hazbinhotel/Upside Down.mp3" },
+    { title: "A Songus Amongus - The Chalkeaters", src: "music/adridrou/music01.flac" },
+    { title: "TETORIS - Kasane Teto", src: "music/adridrou/music02.mp3" },
+    { title: "エクストリーム空中戦 - NayutalieN", src: "music/adridrou/music03.mp3" }
 ];
 
 window.addEventListener('load', () => {
