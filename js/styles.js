@@ -37,7 +37,6 @@ const playlist = [
     { title: "The Galley - Accept", src: "music/adridrou/accept_-_stalingrad/10.mp3" }
 ];
 
-
 function loadPage(pageName){
     const contentEl = document.getElementById("content");
     if (!contentEl) return;
