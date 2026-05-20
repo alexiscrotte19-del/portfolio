@@ -37,6 +37,26 @@ const playlist = [
     { title: "The Galley - Accept", src: "music/adridrou/accept_-_stalingrad/10.mp3" }
 ];
 
+
+function loadPage(pageName){
+    const contentEl = document.getElementById("content");
+    if (!contentEl) return;
+    fetch(`pages/${pageName}.html`)
+        .then(res => {
+            if (!res.ok) throw new Error(`Fichier ${pageName}.html introuvable`);
+            return res.text();
+        })
+        .then(html => {
+            contentEl.innerHTML = html;
+            originalHomeContent = html; // Met à jour le contenu d'origine pour le bouton retour
+            reinitPageScripts();
+            window.scrollTo(0, 0);
+        })
+        .catch(err => {
+            console.error(`Erreur de chargement de ${pageName}:`, err);
+            contentEl.innerHTML = `<p>Erreur de chargement de la page ${pageName}.</p>`;
+        });
+}
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
     const contentEl = document.getElementById("content");
