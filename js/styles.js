@@ -59,9 +59,21 @@ function loadPage(pageName){
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
     const contentEl = document.getElementById("content");
+
     if (contentEl) {
-        originalHomeContent = contentEl.innerHTML;
+        // Si le contenu est déjà présent dans l'index.html
+        if (contentEl.innerHTML.trim() !== "") {
+            // On sauvegarde ce contenu pour le système SPA (bouton retour/accueil)
+            originalHomeContent = contentEl.innerHTML;
+            // On lance les scripts (animations, boutons) immédiatement
+            reinitPageScripts();
+        } 
+        // Cas de secours : si jamais l'index est vide, on charge home.html
+        else {
+            loadPage("home");
+        }
     }
+
     loadState();
 });
 
@@ -167,20 +179,28 @@ function loadSong(index, userTriggered = false) {
         }
     });
 }
-
 function nextSong(userTriggered = false) {
     let index;
-    if (isShuffle && !isRepeat) {
+
+    // Condition 1 : Répétition prioritaire (seulement si fin automatique)
+    if (isRepeat && !userTriggered) {
+        index = currentSongIndex;
+    } 
+    // Condition 2 : Mode aléatoire actif
+    else if (isShuffle) {
         index = Math.floor(Math.random() * playlist.length);
+        // Évite de rejouer la même si la liste le permet
         if (index === currentSongIndex && playlist.length > 1) {
             index = (index + 1) % playlist.length;
         }
-    } else {
+    } 
+    // Condition 3 : Lecture normale
+    else {
         index = (currentSongIndex + 1) % playlist.length;
     }
+
     loadSong(index, userTriggered);
 }
-
 function prevSong(userTriggered = false) {
     let index = (currentSongIndex - 1 + playlist.length) % playlist.length;
     loadSong(index, userTriggered);
@@ -362,12 +382,21 @@ const shuffleStatus = document.getElementById('shuffleStatus');
 
 if (shuffleBtn) {
     shuffleBtn.addEventListener('click', () => {
+        // 1. On change l'état
         isShuffle = !isShuffle;
+
+        // 2. Mise à jour visuelle du bouton
         shuffleBtn.style.color = isShuffle ? "#9b5cff" : "#fff";
         shuffleBtn.style.textShadow = isShuffle ? "0 0 15px #9b5cff" : "none";
+        
         if (shuffleStatus) {
             shuffleStatus.textContent = isShuffle ? "1" : "0";
             shuffleStatus.style.opacity = isShuffle ? "1" : "0.5";
+        }
+
+        // 3. LANCEMENT AUTO : Si on l'active, on change de musique tout de suite
+        if (isShuffle) {
+            nextSong(true); 
         }
     });
 }
