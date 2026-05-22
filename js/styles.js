@@ -16,12 +16,25 @@ const volControl = document.getElementById('volume');
 
 // Playlist initiale
 const playlist = [
-    { title: "Insane - Black Gryph0n", src: "music/hazbinhotel/Insane Black Gryph0n.mp3" },
+    // Alexis
+    { title: "Insane - Black Gryph0n", src: "music/hazbinhotel/Insane Black Gryph0n.mp3" }, 
     { title: "Upside Down - Black Gryph0n", src: "music/hazbinhotel/Upside Down.mp3" },
-    { title: "A Songus Amongus - The Chalkeaters", src: "music/adridrou/music01.flac" },
-    { title: "TETORIS - Kasane Teto", src: "music/adridrou/music02.mp3" },
-    { title: "エクストリーム空中戦 - NayutalieN", src: "music/adridrou/music03.mp3" },
-    { title: "DOOM Eternal",src: "music/hazbinhotel/Doom Eternal OST - The Only Thing They Fear Is You (Mick Gordon) [Doom Eternal Theme].mp3 "}
+    // Adridrou
+    { title: "A Songus Amongus - The Chalkeaters", src: "music/adridrou/random_musics/music01.flac" }, // Random musics
+    { title: "TETORIS - Kasane Teto", src: "music/adridrou/random_musics/music02.mp3" },
+    { title: "エクストリーム空中戦 - NayutalieN", src: "music/adridrou/random_musics/music03.mp3" },
+    { title: "Miss univers - Trust", src: "music/adridrou/random_musics/music04.flac" },
+    { title: "You're Mine - DAGames", src: "music/adridrou/random_musics/music05.mp3" },
+    { title: "Hung, Drawn And Quartered - Accept", src: "music/adridrou/accept_-_stalingrad/01.mp3" }, // Accept - Stalingrad (2012)
+    { title: "Stalingrad - Accept", src: "music/adridrou/accept_-_stalingrad/02.mp3" },
+    { title: "Hellfire - Accept", src: "music/adridrou/accept_-_stalingrad/03.mp3" },
+    { title: "Flash To Bang Time - Accept", src: "music/adridrou/accept_-_stalingrad/04.mp3" },
+    { title: "Shadow Soldiers - Accept", src: "music/adridrou/accept_-_stalingrad/05.mp3" },
+    { title: "Revolution - Accept", src: "music/adridrou/accept_-_stalingrad/06.mp3" },
+    { title: "Against The World - Accept", src: "music/adridrou/accept_-_stalingrad/07.mp3"},
+    { title: "Twist Of Fate - Accept", src: "music/adridrou/accept_-_stalingrad/08.mp3" },
+    { title: "The Quick And The Dead - Accept", src: "music/adridrou/accept_-_stalingrad/09.mp3" },
+    { title: "The Galley - Accept", src: "music/adridrou/accept_-_stalingrad/10.mp3" }
 ];
 
 function loadPage(pageName){
